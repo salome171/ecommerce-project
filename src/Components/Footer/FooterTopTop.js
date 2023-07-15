@@ -1,4 +1,4 @@
-import { styled } from "styled-components"
+import { styled } from 'styled-components'
 
 const FooterTopTopStyle = styled.div`
 width: 100%;
@@ -11,11 +11,11 @@ justify-content: center;
 `
 
 const FooterTopTop = () => {
-  return(
+  return (
     <FooterTopTopStyle>
       <button>Back to Top</button>
     </FooterTopTopStyle>
   )
 }
 
-export default  FooterTopTop;
+export default FooterTopTop

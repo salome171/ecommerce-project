@@ -1,9 +1,9 @@
-import { styled } from "styled-components"
-import FooterBottom from "./FooterBottom"
-import FooterTop from "./Footertop"
-import FooterTopBottom from "./Footertopbottom"
-import FooterTopTop from "./FooterTopTop"
-import FooterBottomEnd from "./FooterBottomEnd"
+import { styled } from 'styled-components'
+import FooterBottom from './FooterBottom'
+import FooterTop from './Footertop'
+import FooterTopBottom from './Footertopbottom'
+import FooterTopTop from './FooterTopTop'
+import FooterBottomEnd from './FooterBottomEnd'
 
 const Headerstyle = styled.div`
 width: 100%;
@@ -15,15 +15,15 @@ align-items: center;
 justify-content: center;
 `
 const Footer = () => {
-    return(
-        <Headerstyle>
-          <FooterTopTop />
-          <FooterTop />
-          <FooterTopBottom />
-          <FooterBottom />
-          <FooterBottomEnd />
-        </Headerstyle>
-    )
+  return (
+    <Headerstyle>
+      <FooterTopTop />
+      <FooterTop />
+      <FooterTopBottom />
+      <FooterBottom />
+      <FooterBottomEnd />
+    </Headerstyle>
+  )
 }
 
 export default Footer
