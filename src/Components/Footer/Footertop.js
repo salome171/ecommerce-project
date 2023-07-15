@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { styled } from "styled-components"
+import { Link } from 'react-router-dom'
+import { styled } from 'styled-components'
 
 const FooterTopStyle = styled.div`
 width: 100%;
@@ -12,21 +12,21 @@ justify-content: center;
 `
 
 const arr = [
-  {link: "/", title: "Careers"},
-  {link: "/", title: "Blog"},
-  {link: "/", title: "About Amazon"},
-  {link: "/", title: "Investor Relations"},
-  {link: "/", title: "Amazon Devices"},
-  {link: "/", title: "Amazon Devices"},
+  { link: '/', title: 'Careers' },
+  { link: '/', title: 'Blog' },
+  { link: '/', title: 'About Amazon' },
+  { link: '/', title: 'Investor Relations' },
+  { link: '/', title: 'Amazon Devices' },
+  { link: '/', title: 'Amazon Devices' }
 ]
 
 const FooterTop = () => {
-  return(
+  return (
     <FooterTopStyle>
-      <div className="footertop">
+      <div className='footertop'>
 
-        <div className="footertoppart">
-          <p className="footertoppartp">Get to Know Us</p>
+        <div className='footertoppart'>
+          <p className='footertoppartp'>Get to Know Us</p>
           <ul>
             {arr.slice(0, 5).map((element, index) => (
               <li key={index}><Link to={element.link}>{element.title}</Link></li>
@@ -34,8 +34,8 @@ const FooterTop = () => {
           </ul>
         </div>
 
-        <div className="footertoppart">
-          <p className="footertoppartp">Get to Know Us</p>
+        <div className='footertoppart'>
+          <p className='footertoppartp'>Get to Know Us</p>
           <ul>
             {arr.slice(0, 5).map((element, index) => (
               <li key={index}><Link to={element.link}>{element.title}</Link></li>
@@ -43,8 +43,8 @@ const FooterTop = () => {
           </ul>
         </div>
 
-        <div className="footertoppart">
-          <p className="footertoppartp">Get to Know Us</p>
+        <div className='footertoppart'>
+          <p className='footertoppartp'>Get to Know Us</p>
           <ul>
             {arr.slice(0, 5).map((element, index) => (
               <li key={index}><Link to={element.link}>{element.title}</Link></li>
@@ -52,8 +52,8 @@ const FooterTop = () => {
           </ul>
         </div>
 
-        <div className="footertoppart">
-          <p className="footertoppartp">Get to Know Us</p>
+        <div className='footertoppart'>
+          <p className='footertoppartp'>Get to Know Us</p>
           <ul>
             {arr.slice(0, 5).map((element, index) => (
               <li key={index}><Link to={element.link}>{element.title}</Link></li>
@@ -62,8 +62,8 @@ const FooterTop = () => {
         </div>
       </div>
     </FooterTopStyle>
-      
+
   )
 }
 
-export default  FooterTop;
+export default FooterTop

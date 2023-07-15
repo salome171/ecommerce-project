@@ -1,4 +1,4 @@
-import { styled } from "styled-components"
+import { styled } from 'styled-components'
 
 const Greatstyle = styled.div`
 width: 60%;
@@ -7,11 +7,11 @@ font-weight: bold;
 display: flex;
 `
 const GreatDeals = () => {
-    return(
-        <Greatstyle>
-         <button className="greatdeals ">Shop Great deals</button>
-        </Greatstyle>
-    )
+  return (
+    <Greatstyle>
+      <button className='greatdeals '>Shop Great deals</button>
+    </Greatstyle>
+  )
 }
 
 export default GreatDeals

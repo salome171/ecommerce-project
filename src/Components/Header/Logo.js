@@ -1,4 +1,4 @@
-import { styled } from "styled-components"
+import { styled } from 'styled-components'
 import logo from '../../Assets/amazonlogo.png'
 
 const Logostyle = styled.div`
@@ -10,11 +10,11 @@ display: flex;
 padding-top: 8px
 `
 const Logo = () => {
-    return(
-        <Logostyle>
-          <div className="hoverforbottom"><a href="#"><img src={logo} alt="logo"/></a></div>
-        </Logostyle>
-    )
+  return (
+    <Logostyle>
+      <div className='hoverfor'><a href='#'><img src={logo} alt='logo' /></a></div>
+    </Logostyle>
+  )
 }
 
 export default Logo
