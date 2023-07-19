@@ -1,28 +1,41 @@
-// import { styled } from 'styled-components'
-import usaicon from '../../Assets/usaicon.png'
 import { FaCaretDown } from 'react-icons/fa'
 import { useState } from 'react'
+import GeorgianFlag from '../../Assets/Wikipedia-Flags-GE-Georgia-Flag.512.png'
+import EnglishIcon from '../../Assets/usaicon.png'
 
 const Languages = () => {
-  const [language, setlanguage] = useState('')
+  const [language, setLanguage] = useState('English')
+  const [icon, setIcon] = useState(EnglishIcon)
+
+  const handleLanguageChange = (e) => {
+    const selectedLanguage = e.target.value
+    setLanguage(selectedLanguage)
+
+    if (selectedLanguage === 'Georgian') {
+      setIcon(GeorgianFlag)
+    } else {
+      setIcon(EnglishIcon)
+    }
+  }
 
   return (
 
     <div className='dropdown'>
+
       <button className='dropdowntext dropdownhover languagesbottom'>
-        <img className='usicon' src={usaicon} /><p className='boldp'>EN</p>
-        <div><FaCaretDown /></div>
+        <img className='usicon' src={icon} alt={language} />
+        <p className='boldp'>{language}</p>
+        <div>
+          <FaCaretDown />
+        </div>
       </button>
 
       <div className='dropdown-content'>
         <p>Change Language</p>
-        Georgian <input type='radio' value='Georgian' name='languager' onChange={e => setlanguage(e.target.value)} /><br />
-        Spanish<input type='radio' value='Spanish' name='languager' onChange={e => setlanguage(e.target.value)} /><br />
-        Chinese <input type='radio' value='Chinese' name='languager' onChange={e => setlanguage(e.target.value)} /><br />
-        <p>{language}</p>
+        Georgian <input type='radio' value='Georgian' name='language' onClick={handleLanguageChange} /><br />
+        English <input type='radio' value='English' name='language' onClick={handleLanguageChange} /><br />
       </div>
     </div>
-
   )
 }
 

@@ -6,8 +6,10 @@ body {
 
 
 .headerinput {
-  width: 90%;
-  height:80%;
+  
+  height:100%;
+  width: 100%;
+  display: flex;
   box-sizing: border-box;
   outline: none;
   /* border: 2px solid transparent; */
@@ -23,35 +25,54 @@ body {
 
 }
 
-.inputstyle {
-width: 100%;
-height: 8vh;
-color: rgb(27, 26, 26);
-display: flex;
-align-items: center
-}
-
 .langugesall {
   position: relative;
 }
 
 .searchIconheader {
   width: 8%;
-  height: 80%;
+  height: 100%;
   display: flex;
   background-color: #febd69;
   justify-content: center;
+  flex-direction: row;
   align-items: center;
   color: white;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  margin-right: 5px;
 }
 
-.resultofinput {
-  width: 400px;
-  height:8vh;
+.mainsearchcontainer {
   display: flex;
-  background-color: #e74b34;
-  color: white;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 100%;
+  height: 100%;
+  position: relative;
+  /* justify-content: center; */
 }
+
+.inputstyle {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: #e74b34;
+  }
+
+
+
+.resultofinput {
+  width: 50%;
+  max-height: 195px;
+  background-color: #e7bab3;
+  color: white;
+  z-index: 999;
+  overflow: hidden;
+  position: absolute;
+  top: 40px
+
+} 
 
 
 .padallborder {
@@ -572,73 +593,5 @@ padding-left: 25px;
   opacity: 0;
   visibility: hidden;
 }
-
-.Dropdown-menuall{
-  background-color: white;
-  width: 600px;
-  height: 800px;
-  display: flex;
-  border: 1px solid red;
-  color: black;
-  position: absolute;
-  top: 0;
-  left: 0; 
-  flex-direction: column;
-  padding: 0 1rem;
-  background-color: #fcfafa;  
-}
-
-.Dropdown-menuall.inactiveall {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.zindex {
-  z-index: 1;
-}
-
-.allnavbarul {
-  /* height: 500px; */
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  
-}
-
-.menu-button {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  width: 100%;
-  height: auto;
-  justify-content: space-between;
-  margin-top: 15px;
-  
-}
-
-.button-text {
- display: flex;
-}
-
-.menu-button:hover {
-  background-color: #eaeded;
- 
-}
-
-.button-icon {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-
-.h2 {
-  font-weight: bold;
-  font-size: 28px;
-}
-
-
-
-
-
 
 

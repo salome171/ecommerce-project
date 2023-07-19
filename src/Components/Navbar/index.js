@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 import Navbarul from './Navbarul'
 import GreatDeals from './GreatDeals'
-import AllNavbar from './AllNavBar'
+import OffCanvasMenu from '../OffCanvasMenu'
 
 const Navbarstyle = styled.header`
 width: 100%;
@@ -13,7 +13,7 @@ display: flex;
 const Navbar = () => {
   return (
     <Navbarstyle>
-      <AllNavbar />
+      <OffCanvasMenu />
       <Navbarul />
       <GreatDeals />
     </Navbarstyle>

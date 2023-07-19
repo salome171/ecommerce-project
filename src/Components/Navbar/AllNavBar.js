@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { FaBars, FaChevronRight } from 'react-icons/fa'
 
-const AllNavbar = () => {
+const OffCanvasMenu = () => {
   const [open, setopen] = useState(false)
   const [menuopen, setMenuOpen] = useState(false)
   const [data, setAlbums] = useState([])
@@ -32,23 +32,39 @@ const AllNavbar = () => {
       </button>
 
       <div className={`Dropdown-menuall ${open ? '' : 'inactiveall'}`}>
-        <h2 className='h2'>Digital Content & Devices</h2>
+        <div className={`${open ? '' : 'inactiveall'}`}>
+          <h2 className='h2'>Digital Content & Devices</h2>
 
-        <ul className='allnavbarul'>
-          {data.slice(0, 10).map(el => (
-            <li key={el.id}>
-              <button className='menu-button' onClick={() => setMenuOpen(!menuopen)}>
-                <span className='button-text'>{el.title}</span>
-                <div className='button-icon'><FaChevronRight /></div>
-              </button>
-              {menuopen ? 'hey' : ''}
-            </li>
-          ))}
-        </ul>
+          <ul className='allnavbarul'>
+            {data.slice(0, 10).map(el => (
+              <li key={el.id}>
+                <button className='menu-button' onClick={() => setMenuOpen(el.id)}>
+                  <span className='button-text'>{el.title}</span>
+                  <div className='button-icon'><FaChevronRight /></div>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
 
+        <div className={`${open ? '' : 'inactiveall'}`}>
+          <h2 className='h2'>Digital Content & Devices</h2>
+
+          <ul className='allnavbarul'>
+            {data.slice(0, 10).map(el => (
+              <li key={el.id}>
+                <button className='menu-button' onClick={() => setMenuOpen(!menuopen)}>
+                  <span className='button-text'>{el.title}</span>
+                  <div className='button-icon'><FaChevronRight /></div>
+                </button>
+                {menuopen ? 'hey' : ''}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   )
 }
 
-export default AllNavbar
+export default OffCanvasMenu
