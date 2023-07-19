@@ -22,8 +22,10 @@ const Header = () => {
     <Headerstyle>
       <Logo />
       <Custom texts='deliver to georgia' icon={<FaMapMarkerAlt />} />
-      <All />
-      <Input />
+      <div style={{ display: 'flex', width: '100%', color: 'black', height: '42px' }}>
+        <All />
+        <Input />
+      </div>
       <Languages />
       <Signin />
       <Custom texts='returns & Orders' className='custom-styles dropdown-content' />

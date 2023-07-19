@@ -8,7 +8,7 @@ const Input = () => {
     Isloading: false,
     IsLoaded: false,
     Iserror: false,
-    data: []
+    data: null
   })
   // const [searchContainer, setsearchContainer] = useState([])
 
@@ -22,7 +22,7 @@ const Input = () => {
       Isloading: true,
       IsLoaded: false,
       Iserror: false,
-      data: []
+      data: null
     })
 
     const response = await fetch(fetchLink + value)
@@ -34,7 +34,7 @@ const Input = () => {
       Isloading: false,
       IsLoaded: true,
       Iserror: false,
-      data: [drinks]
+      data: drinks
     })
   }
 
@@ -43,9 +43,9 @@ const Input = () => {
   // }
 
   return (
-    <div className='inputstyle'>
+    <div className='mainsearchcontainer'>
 
-      <form className='inputstyle'>
+      <form style={{ display: 'flex', height: '100%', width: '100%' }}>
         <input className='headerinput' type='text' placeholder='Search Amazon' name='searchAmazon' value={search} onChange={handleSearch} />
 
         <div className='searchIconheader'>
@@ -53,9 +53,18 @@ const Input = () => {
         </div>
       </form>
 
-      {datas.data.map((e) => (
-        <div className='resultofinput' key={e.idDrink}>{e.strDrink}</div>))}
+      {/* <div className='inputresults'> */}
+      {datas.data && search !== '' &&
+        <div className='resultofinput'>
+          {datas.data.map((e) => (
 
+            <p onClick={(e) => console.log(e.target.textContent)} key={e.idDrink}>
+              {e.strDrink}
+            </p>
+
+          ))}
+        </div>}
+      {/* </div> */}
     </div>
 
   )
