@@ -145,7 +145,7 @@ padding-left: 25px;
   align-items: center;
   background-color: #f3f3f3;
   width: 4vw;
-  height: 6.4vh;
+  height: 5.8vh;
   position: relative;
   display: inline-block;
   align-items: center;
@@ -392,33 +392,37 @@ padding-left: 25px;
 
 .styleslideleft {
   display: flex;
-  width: 80px;
-  height: 35%;
+  /* width: 80px;
+  height: 35px; */
   /* outline: 3px solid white;
   border: 3px solid #2596be; */
   position: absolute;
   align-items: center;
   justify-content: center;
-  top: 5px;
+  top: 85px;
   left: 20px;
+  cursor: pointer;
 }
 .styleslideright {
   display: flex;
-  width: 80px;
-  height: 35%;
+  /* width: 80px;
+  height: 35px; */
   /* outline: 3px solid white;
   border: 3px solid #2596be; */
   position: absolute;
   align-items: center;
   justify-content: center;
-  top: 5px;
+  top: 85px;
   right: 40px;
+  cursor: pointer;
 }
 
 .main-slider-div {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* padding-bottom: 10%;
+  background-color: #4b818b; */
 }
 
 .sliderstyles{
@@ -427,6 +431,7 @@ padding-left: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .allpccol {
@@ -593,5 +598,50 @@ padding-left: 25px;
   opacity: 0;
   visibility: hidden;
 }
+
+.FooterSigningContAll {
+  width: 100%;
+  display: flex;
+  padding-top: 2%;
+  color: black;
+  flex-direction: column;
+  /* background-color: #f4c041; */
+  padding-bottom: 2%;
+
+}
+
+.FooterSigningCont {
+  width: 100%;
+  /* height: 30%; */
+  padding-top: 2%;
+  padding-bottom: 1.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  flex-direction: column;
+}
+
+.FooterSigningContButton {
+  padding: 0.25% 6.5%;
+  height: auto;
+  /* width: 30%; */
+  background-color: #ffc73a;
+  border: 2px solid #f4c041;
+  font-weight: bold;
+  font-size: 0.8rem;
+  border-radius: 5px;
+}
+
+.FooterSigningContpfirst {
+  font-size: 0.85rem;
+  padding-bottom: 0.3%;
+}
+
+.FooterSigningContpSecond {
+  font-size: 0.7rem;
+}
+
+
 
 

@@ -38,14 +38,14 @@ const Input = () => {
     })
   }
 
-  // const handleClick = () => {
-
-  // }
+  const handleSubmit = (event) => {
+    event.preventDefault()
+  }
 
   return (
     <div className='mainsearchcontainer'>
 
-      <form style={{ display: 'flex', height: '100%', width: '100%' }}>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', height: '100%', width: '100%' }}>
         <input className='headerinput' type='text' placeholder='Search Amazon' name='searchAmazon' value={search} onChange={handleSearch} />
 
         <div className='searchIconheader'>

@@ -1,0 +1,125 @@
+.signingContainer {
+  display: flex;
+  /* background-color: rgb(220, 236, 149); */
+  width: 90%;
+  height: auto;
+  justify-content: center;
+  margin: 0 auto; 
+  margin-top: 1%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signingContainerLogo {
+  width:  8%;
+  min-width: 100px;
+  height: auto;
+  display: flex;
+ }
+
+ .signingContainerBodyWrapper{
+  width:  25%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #e1e1e1;
+  justify-content: center;
+ }
+
+ .signingContainerBodyWrapperFooter {
+  height: auto;
+  border: none;
+ }
+
+ .signingContainerBody {
+  display: flex;
+  background-color: rgb(254, 254, 254);
+  width: 90%;
+  height: 250px;
+  flex-direction: column;
+ }
+
+ .signingContainerBodyButton {
+  width: 100%;
+  height: auto;
+  padding: 1.2%;
+  border-radius: 10px;
+  background-color: #ffd814;
+  font-size: 0.9vw;
+  font-weight: 400;
+  margin-bottom: 3%;
+ }
+
+ .signingContainerBodyButtontwo {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+
+ }
+
+ .signingContainerBodyh1 {
+  font-size: 2.0vw;
+ }
+
+ .signingContainerBodyp {
+  font-size: 0.9vw;
+  font-weight: bold;
+  margin-top: 2%;
+  margin-left: 1%;
+ }
+
+ .signingContainerinput {
+ 
+  border: 1px solid #aeaeae;
+  border-radius: 3px;
+  margin-top: 2%;
+  margin-bottom: 4%;
+  padding: 1.2%;
+  font-size: 0.8rem;
+  color: #6d7088;
+ }
+
+ .signingContainerinput:hover {
+  outline: 1px solid #358fd7;
+  border: 2px solid #c8f3fa;
+ }
+
+
+ .signingContainerfooterp {
+  font-size: 0.8vw;
+  margin: 4% 0
+ }
+
+ .termsp {
+  font-size: 0.8vw;
+  margin-top: 4%;
+  margin-bottom: 4%;
+ }
+
+ .needhelp {
+  color: #358fd7;
+  font-size: 0.8vw;
+ }
+
+ .termsp a {
+  color: #358fd7;
+ }
+
+ .conditionsandso { 
+  display: flex;
+  flex-direction: row;
+  font-size: 0.8vw;
+  color: #358fd7;
+  padding-bottom: 3%;
+  gap: 1vw;
+}
+
+.lastp {
+  font-size: 0.7vw;
+}
+
+.minPassword {
+  font-size: 0.8em;
+  margin-top: -10px;
+}
+
