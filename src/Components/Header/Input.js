@@ -1,41 +1,52 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../../App.css'
 import { FaSearch } from 'react-icons/fa'
 
 const Input = () => {
   const [search, setSearch] = useState('')
   const [datas, setDatas] = useState({
-    Isloading: false,
+    Isloading: true,
     IsLoaded: false,
     Iserror: false,
-    data: null
+    data: []
   })
-  // const [searchContainer, setsearchContainer] = useState([])
 
-  const fetchLink = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
+  const [filteredData, setFilteredData] = useState([])
 
-  const handleSearch = async (e) => {
+  const fetchLink = 'https://fakestoreapiserver.reactbd.com/amazonproducts'
+
+  const Fetcheddata = async () => {
+    try {
+      const response = await fetch(fetchLink)
+      const data = await response.json()
+      setDatas({
+        Isloading: false,
+        IsLoaded: true,
+        Iserror: false,
+        data
+      })
+    } catch (error) {
+      setDatas({
+        Isloading: false,
+        IsLoaded: false,
+        Iserror: true,
+        data: []
+      })
+    }
+  }
+
+  useEffect(() => {
+    Fetcheddata()
+  }, [])
+
+  const handleSearch = (e) => {
     const { value } = e.target
     setSearch(value)
-
-    setDatas({
-      Isloading: true,
-      IsLoaded: false,
-      Iserror: false,
-      data: null
+    const filtered = datas.data.filter((item) => {
+      return item.title.toLowerCase().includes(value.toLowerCase())
     })
 
-    const response = await fetch(fetchLink + value)
-    const data = await response.json()
-    const { drinks } = data
-    console.log(drinks)
-
-    setDatas({
-      Isloading: false,
-      IsLoaded: true,
-      Iserror: false,
-      data: drinks
-    })
+    setFilteredData(filtered)
   }
 
   const handleSubmit = (event) => {
@@ -44,29 +55,37 @@ const Input = () => {
 
   return (
     <div className='mainsearchcontainer'>
-
       <form onSubmit={handleSubmit} style={{ display: 'flex', height: '100%', width: '100%' }}>
-        <input className='headerinput' type='text' placeholder='Search Amazon' name='searchAmazon' value={search} onChange={handleSearch} />
+        <input
+          className='headerinput'
+          type='text'
+          placeholder='Search Amazon'
+          name='searchAmazon'
+          value={search}
+          onChange={handleSearch}
+        />
+
+        {search !== '' && (
+          <div className='resultofinput'>
+            {filteredData.map((item) => {
+              const { id, title } = item
+
+              return (
+                <p onClick={() => console.log(title)} key={id}>
+                  {title}
+                </p>
+              )
+            })}
+          </div>
+        )}
 
         <div className='searchIconheader'>
-          <button><FaSearch style={{ color: 'black', fontSize: '20px' }} /></button>
+          <button>
+            <FaSearch style={{ color: 'black', fontSize: '20px' }} />
+          </button>
         </div>
       </form>
-
-      {/* <div className='inputresults'> */}
-      {datas.data && search !== '' &&
-        <div className='resultofinput'>
-          {datas.data.map((e) => (
-
-            <p onClick={(e) => console.log(e.target.textContent)} key={e.idDrink}>
-              {e.strDrink}
-            </p>
-
-          ))}
-        </div>}
-      {/* </div> */}
     </div>
-
   )
 }
 
