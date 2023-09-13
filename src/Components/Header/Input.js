@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import '../../App.css'
 import { FaSearch } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 const Input = () => {
   const [search, setSearch] = useState('')
@@ -12,6 +13,7 @@ const Input = () => {
   })
 
   const [filteredData, setFilteredData] = useState([])
+  // const usecontect = createContext(defaulvalue)
 
   const fetchLink = 'https://fakestoreapiserver.reactbd.com/amazonproducts'
 
@@ -50,42 +52,56 @@ const Input = () => {
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault(`${event.target}`)
+  }
+
+  const push = useNavigate()
+
+  const handlenavigate = (item) => {
+    push(`/${item.id}`)
   }
 
   return (
-    <div className='mainsearchcontainer'>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', height: '100%', width: '100%' }}>
-        <input
-          className='headerinput'
-          type='text'
-          placeholder='Search Amazon'
-          name='searchAmazon'
-          value={search}
-          onChange={handleSearch}
-        />
+    <>
 
-        {search !== '' && (
-          <div className='resultofinput'>
-            {filteredData.map((item) => {
-              const { id, title } = item
+      <div className='mainsearchcontainer'>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', height: '100%', width: '100%' }}>
+          <input
+            className='headerinput'
+            type='text'
+            placeholder='Search Amazon'
+            name='searchAmazon'
+            value={search}
+            onChange={handleSearch}
+          />
 
-              return (
-                <p onClick={() => console.log(title)} key={id}>
-                  {title}
-                </p>
-              )
-            })}
+          {search !== '' && (
+            <div className='resultofinput'>
+              {filteredData.map((item) => {
+                const { id, title } = item
+                console.log(item)
+                console.log(id)
+                console.log(item.id)
+
+                return (
+                  <p onClick={() => handlenavigate(item)} key={id}>
+                    {title}
+                  </p>
+                )
+              })}
+            </div>
+          )}
+
+          <div className='searchIconheader'>
+            <button>
+              <FaSearch style={{ color: 'black', fontSize: '20px' }} />
+            </button>
           </div>
-        )}
+        </form>
+      </div>
 
-        <div className='searchIconheader'>
-          <button>
-            <FaSearch style={{ color: 'black', fontSize: '20px' }} />
-          </button>
-        </div>
-      </form>
-    </div>
+    </>
+
   )
 }
 
