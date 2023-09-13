@@ -13,7 +13,7 @@ function App () {
           <Route path='*' element={<Main />} />
           <Route path='/signing' element={<Signin />} />
           <Route path='/createAccount' element={<CreateAccount />} />
-          <Route path='/Items' element={<Items />} />
+          <Route path='/:id' element={<Items />} />
         </Routes>
       </BrowserRouter>
     </div>
