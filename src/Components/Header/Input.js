@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import '../../App.css'
 import { FaSearch } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
+import All from './All'
 
 const Input = () => {
   const [search, setSearch] = useState('')
@@ -63,7 +64,7 @@ const Input = () => {
 
   return (
     <>
-
+      <All />
       <div className='mainsearchcontainer'>
         <form onSubmit={handleSubmit} style={{ display: 'flex', height: '100%', width: '100%' }}>
           <input
@@ -73,6 +74,7 @@ const Input = () => {
             name='searchAmazon'
             value={search}
             onChange={handleSearch}
+
           />
 
           {search !== '' && (

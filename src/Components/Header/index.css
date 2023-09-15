@@ -1,0 +1,20 @@
+.itemspagecontainer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: blueviolet;
+  font-size: 1rem;
+}
+
+.leftsideContainer {
+  display: flex;
+  flex: 1.5;
+  background-color: brown;
+}
+
+.rightsideContainer {
+
+  display: flex;
+  flex: 5.5;
+  background-color: rgb(97, 42, 165);
+
+}
