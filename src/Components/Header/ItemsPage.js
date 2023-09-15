@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Header from '.'
+import Navbar from '../Navbar'
+import './index.css'
 
 const ItemsPage = () => {
   const { id } = useParams()
@@ -44,34 +47,42 @@ const ItemsPage = () => {
   console.log(datas.data)
 
   return (
-    <div>
-      {datas.data.isLoading
-        ? (
-          <p>Loading...</p>
-          )
-        : datas.data.isError
+    <>
+      <Header />
+      <Navbar />
+
+      <div className='itemspagecontainer'>
+        {datas.data.isLoading
           ? (
-            <p>Error loading data</p>
+            <p>Loading...</p>
             )
-          : (
-            <div>
-              {datas.data.map((item) => (
-                <div key={item.id}>
-                  {idi == item.id
-                    ? (
-                      <>
-                        <p>Title: {item.title}</p>
-                        <p>{item.id}</p>
-                        <img style={{ width: '200px' }} src={item.image} />
-                      </>
-                      )
-                    : null}
-                </div>
-              ))}
-            </div>
-            )}
-      <p>pp</p>
-    </div>
+          : datas.data.isError
+            ? (
+              <p>Error loading data</p>
+              )
+            : (
+              <div className='leftsideContainer'>
+                <p>saa</p>
+                {datas.data.map((item) => (
+                  <div key={item.id}>
+                    {idi == item.id
+                      ? (
+                        <>
+                          <p>Title: {item.title}</p>
+                          <p>{item.id}</p>
+                          <img style={{ width: '200px' }} src={item.image} />
+                        </>
+                        )
+                      : null}
+                  </div>
+                ))}
+              </div>
+              )}
+        <div className='rightsideContainer' />
+        <h2>Results </h2>
+
+      </div>
+    </>
   )
 }
 

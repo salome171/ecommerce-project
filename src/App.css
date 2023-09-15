@@ -250,14 +250,28 @@ padding-left: 25px;
   padding-left: 20px;
 }
 
+
+
 .dropdowntext {
   display: flex;
-  align-items: center; 
+  /* display: inline-block;
+  align-items: center;
   justify-content: center;
-  width: 100px;
   height: 7vh;
   padding-left: 3px;
   padding-right: 3px;
+  flex-wrap: wrap;
+  background-color: #e74b34; */
+  align-items: center; 
+  justify-content: center;
+  width: auto;
+  height: 7vh;
+  padding-left: 3px;
+  padding-right: 3px;
+  flex-wrap: wrap;
+  /* background-color: #e74b34; */
+
+  
 }
 
 .usicon {

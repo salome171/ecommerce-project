@@ -23,7 +23,7 @@ const Header = () => {
       <Logo />
       <Custom texts='deliver to georgia' icon={<FaMapMarkerAlt />} />
       <div style={{ display: 'flex', width: '100%', color: 'black', height: '42px' }}>
-        <All />
+        {/* <All /> */}
         <Input />
       </div>
       <Languages />
